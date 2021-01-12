@@ -7,5 +7,22 @@
 </head>
 <body>
     <h1>Calendar working</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Start</th>
+                <th>End</th>
+            </tr>
+        </thead>
+            <h2>{{ rows }}</h2>
+        <tbody>
+            {% for appointment in appointments %}
+                <li>
+                    <a>{{ appointment.name }} {{ appointment.start_datetime.d.strftime("%H:%M") }} {{ appointment.end_datetime.d.strftime("%H:%M") }}</a>
+                </li>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

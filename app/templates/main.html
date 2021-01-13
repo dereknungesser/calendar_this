@@ -15,12 +15,11 @@
                 <th>End</th>
             </tr>
         </thead>
-            <h2>{{ rows }}</h2>
         <tbody>
-            {% for appointment in appointments %}
-                <li>
-                    <a>{{ appointment.name }} {{ appointment.start_datetime.d.strftime("%H:%M") }} {{ appointment.end_datetime.d.strftime("%H:%M") }}</a>
-                </li>
+            {% for row in rows %}
+                <p> {{ row.1 }}
+                    {{ row.2.strftime("%H:%M") }}
+                    {{ row.3.strftime("%H:%M") }}</p>
             {% endfor %}
         </tbody>
     </table>

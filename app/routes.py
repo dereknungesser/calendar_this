@@ -15,8 +15,8 @@ CONNECTION_PARAMETERS = {
 
 @bp.route("/")
 def main():
-    with psycopg2.connect(**CONNECTION_PARAMETERS) as rows:
-        with rows.cursor() as cursor:
+    with psycopg2.connect(**CONNECTION_PARAMETERS) as conn:
+        with conn.cursor() as cursor:
             cursor.execute("""
                 SELECT id, name, start_datetime, end_datetime
                     FROM appointments
